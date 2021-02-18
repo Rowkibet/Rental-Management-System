@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HOMEPAGE */
 header {
     background-color: rgb(65, 105, 225);
     width: 100%;
@@ -73,4 +78,63 @@ nav a::after {
 nav li:hover a::after {
     width: 100%;
     background-color: #fff;
+}
+
+/* AUTHORIZATION PAGES */
+.form-container {
+    height: calc(100% - 80px);
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.auth-form {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 420px;
+    margin: 60px 0;
+    padding: 30px 40px;
+}
+
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+}
+
+.form-control .icon {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 36%;
+    right: 10px;
+}
+
+.form-control .fa-check-circle {
+    color: green;
+}
+
+.form-control .fa-exclamation-circle {
+    color: red;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 12px;
 }
