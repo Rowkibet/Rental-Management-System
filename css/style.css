@@ -83,7 +83,6 @@ nav li:hover a::after {
 /* AUTHORIZATION PAGES */
 .form-container {
     height: calc(100% - 80px);
-    border: 1px solid blue;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -103,7 +102,8 @@ nav li:hover a::after {
 }
 
 .form-control {
-    margin-bottom: 20px;
+    margin-bottom: 9px;
+    padding-bottom: 22px;
     position: relative;
 }
 
@@ -119,6 +119,12 @@ nav li:hover a::after {
     padding: 15px;
 }
 
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+}
+
 .form-control .icon {
     font-size: 1.5rem;
     position: absolute;
@@ -128,10 +134,29 @@ nav li:hover a::after {
 
 .form-control .fa-check-circle {
     color: green;
+    visibility: hidden;
 }
 
 .form-control .fa-exclamation-circle {
     color: red;
+    visibility: hidden;
+}
+
+.form-control.success .fa-check-circle {
+    visibility:visible;
+}
+
+.form-control.success input {
+    border: 2px solid green;
+}
+
+.form-control.error .fa-exclamation-circle, .form-control.error small {
+    color: red;
+    visibility: visible;
+}
+
+.form-control.error input {
+    border: 2px solid red;
 }
 
 .auth-form button {
