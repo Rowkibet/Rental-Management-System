@@ -132,6 +132,10 @@ nav li:hover a::after {
     right: 10px;
 }
 
+.form-control:nth-child(3) .icon {
+    right: 50px;
+}
+
 .form-control .fa-check-circle {
     color: green;
     visibility: hidden;

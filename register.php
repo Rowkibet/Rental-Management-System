@@ -25,7 +25,7 @@
         <div class="auth-form">
             <div class="form-header">
                 <h2>Sign Up</h2>
-                <p>Please fill in this form to create an account</p>
+                <p>Please fill in this form with your details</p>
             </div>
     
             <form action="register.php" novalidate>
@@ -45,13 +45,13 @@
                     <small>Error message</small>
                 </div>
 
-                <!-- <div class="form-control">
+                <div class="form-control">
                     <label for="">Date Of Birth</label>
-                    <input type="email" id="email">
+                    <input type="date" name="tenant_DOB" id="dob">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
-                </div> -->
+                </div>
 
                 <div class="form-control">
                     <label for="">Email Address</label>
@@ -63,7 +63,7 @@
 
                 <div class="form-control">
                     <label for="">Phone Number</label>
-                    <input type="phone" name="tenant_phone_no" id="phone-number">
+                    <input type="tel" name="tenant_phone_no" id="phone-number">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
