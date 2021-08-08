@@ -3,6 +3,8 @@ var form = document.querySelector(".auth-form form");
 var firstname = document.getElementById("firstname");
 var lastname = document.getElementById("lastname");
 var email = document.getElementById("email");
+var phoneNumber = document.getElementById("phone-number");
+var occupation = document.getElementById("occupation")
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirm-password");
 var username = document.getElementById("username");
@@ -17,6 +19,8 @@ function validateData() {
     const firstnameData = firstname.value.trim();
     const lastnameData = lastname.value.trim();
     const emailData = email.value.trim();
+    const phoneNumberData = phoneNumber.value.trim();
+    const occupationData = occupation.value.trim();
     const passwordData = password.value.trim();
     const confirmPasswordData = confirmPassword.value.trim();
 
@@ -42,6 +46,22 @@ function validateData() {
         setErrorFor(email, "email not valid");
     } else {
         setSuccessFor(email)
+    }
+
+    //phone number
+    if(phoneNumberData === '') {
+        setErrorFor(phoneNumber, "phone number cannot be empty");
+    } else if(!isPhoneNumberValid(phoneNumberData)) {
+        setErrorFor(phone, "phone number is invalid")
+    } else {
+        setSuccessFor(phoneNumber);
+    }
+
+    //occupation
+    if(occupationData === '') {
+        setErrorFor(occupation, "occupation cannot be empty");
+    } else {
+        setSuccessFor(occupation);
     }
 
     //password
@@ -79,4 +99,9 @@ function setSuccessFor(input) {
 function isEmailValid(email) {
     const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(email);
+}
+
+function isPhoneNumberValid(phoneNumber) {
+    const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    return regex.test(phone);
 }

@@ -27,10 +27,10 @@
                 <h2>Login</h2>
             </div>
     
-            <form action="login.html">
+            <form action="login.php" novalidate>
                 <div class="form-control">
-                    <label for="">Username</label>
-                    <input type="text" id="username">
+                    <label for="">Email Address</label>
+                    <input type="email" name="tenant_email" id="email">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -38,13 +38,13 @@
 
                 <div class="form-control">
                     <label for="">Password</label>
-                    <input type="password" id="password">
+                    <input type="password" name="tenant_email" id="password">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" name="login-btn">Submit</button>
             </form>
         </div>
     </div>

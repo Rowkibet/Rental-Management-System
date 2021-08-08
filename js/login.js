@@ -1,6 +1,6 @@
 //Target the input elements
 var form = document.querySelector(".auth-form form");
-var username = document.getElementById("username");
+var email = document.getElementById("email");
 var password = document.getElementById("password");
 
 form.addEventListener('submit', e => {
@@ -10,14 +10,16 @@ form.addEventListener('submit', e => {
 
 function validateData() {
     //Store input data
-    const usernameData = username.value.trim();
+    const emailData = email.value.trim();
     const passwordData = password.value.trim();
 
     //username
-    if(usernameData === '') {
-        setErrorFor(username, "username cannot be empty");
+    if(emailData === '') {
+        setErrorFor(email, "email cannot be empty");
+    } else if(!isEmailValid(emailData)) {
+        setErrorFor(email, "email not valid");
     } else {
-        setSuccessFor(username);
+        setSuccessFor(email)
     }
 
     //password
@@ -39,4 +41,9 @@ function setErrorFor(input, message) {
 function setSuccessFor(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
+}
+
+function isEmailValid(email) {
+    const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(email);
 }
