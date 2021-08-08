@@ -20,7 +20,7 @@ function validateData() {
     const lastnameData = lastname.value.trim();
     const dateOfBirthData = dateOfBirth.value;
     const emailData = email.value.trim();
-    // const phoneNumberData = phoneNumber.value.trim();
+    const phoneNumberData = phoneNumber.value.trim();
     const occupationData = occupation.value.trim();
     const passwordData = password.value.trim();
     const confirmPasswordData = confirmPassword.value.trim();
@@ -56,14 +56,16 @@ function validateData() {
         setSuccessFor(email)
     }
 
-    // //phone number
-    // if(phoneNumberData === '') {
-    //     setErrorFor(phoneNumber, "phone number cannot be empty");
-    // // } else if(!isPhoneNumberValid(phoneNumberData)) {
-    // //     setErrorFor(phoneNumber, "phone number is invalid")
-    // } else {
-    //     setSuccessFor(phoneNumber);
-    // }
+    //phone number
+    if(phoneNumberData === '') {
+        setErrorFor(phoneNumber, "phone number cannot be empty");
+    } 
+            //No symbols and alphabets, must be 10
+    else if(!isPhoneNumberValid(phoneNumberData)) {
+        setErrorFor(phoneNumber, "phone number is invalid")
+    } else {
+        setSuccessFor(phoneNumber);
+    }
 
     //occupation
     if(occupationData === '') {
@@ -109,7 +111,7 @@ function isEmailValid(email) {
     return regex.test(email);
 }
 
-// function isPhoneNumberValid(phoneNumber) {
-//     const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-//     return regex.test(phoneNumber);
-// }
+function isPhoneNumberValid(phoneNumber) {
+    const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    return regex.test(phoneNumber);
+}
