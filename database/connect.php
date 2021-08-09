@@ -9,9 +9,9 @@ $db_name = 'rental management system';
 $conn = new MySQLi($host, $user, $pass, $db_name);
 
 // To check if there is any error while establishing connection
-if ($conn->connect_error) {
-    die('Database connection error: ' . $conn->connect_error);// The app will stop executing
-} else {
-    echo "DB connection successful";    
-}
+// if ($conn->connect_error) {
+//     die('Database connection error: ' . $conn->connect_error);// The app will stop executing
+// } else {
+//     echo "DB connection successful";    
+// }
 ?>

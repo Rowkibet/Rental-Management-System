@@ -1,4 +1,4 @@
-<?php include("database/connect.php"); ?>
+<?php include("C:xampp/htdocs/Rental-Management-System/controllers/users.php") ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +30,10 @@
                 <p>Please fill in this form with your details</p>
             </div>
     
-            <form action="register.php" novalidate>
+            <form action="register.php" method="post" novalidate>
                 <div class="form-control">
                     <label for="">First Name</label>
-                    <input type="text" name="tenant_fname" id="firstname">
+                    <input type="text" name="tenant_fname" value= "" id="firstname">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -95,11 +95,11 @@
                     <small>Error message</small>
                 </div>
 
-                <button type="submit" name="register.btn">Submit</button>
+                <button type="submit" name="register-btn">Submit</button>
             </form>
         </div>
     </div>
     
-    <script src="js/register.js"></script>
+    <!-- <script src="js/register.js"></script> -->
 </body>
 </html>

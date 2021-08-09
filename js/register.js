@@ -1,5 +1,6 @@
 //Target the input elements
 var form = document.querySelector(".auth-form form");
+var formControlArray = Array.from(form.children);
 var firstname = document.getElementById("firstname");
 var lastname = document.getElementById("lastname");
 var dateOfBirth = document.getElementById("dob");
@@ -8,10 +9,15 @@ var phoneNumber = document.getElementById("phone-number");
 var occupation = document.getElementById("occupation")
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirm-password");
+var errors;
 
 form.addEventListener('submit', e => {
     e.preventDefault();
     validateData();
+
+    if(errors === 0) {
+        form.submit();
+    } 
 });
 
 function validateData() {
@@ -91,6 +97,12 @@ function validateData() {
     } else {
         setSuccessFor(confirmPassword);
     } 
+
+    formControlArray.forEach((element) => {
+        if(element.className === "form-control error") {
+            return errors + 1;
+        }
+    });
 }
 
 function setErrorFor(input, message) {

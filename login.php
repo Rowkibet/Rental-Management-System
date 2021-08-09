@@ -27,7 +27,7 @@
                 <h2>Login</h2>
             </div>
     
-            <form action="login.php" novalidate>
+            <form action="login.php" method="post" novalidate>
                 <div class="form-control">
                     <label for="">Email Address</label>
                     <input type="email" name="tenant_email" id="email">
@@ -49,6 +49,6 @@
         </div>
     </div>
 
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
 </body>
 </html>
