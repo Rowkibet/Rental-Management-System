@@ -12,37 +12,33 @@
 </head>
 <body>
   
-    <header>
-        <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
+<header>
+        <a href="http://localhost/Rental-Management-System/index.php" class="logo">
             <h1 class="logo-text">Logo</h1>
         </a>
 
         <ul class="nav">
-            <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
+            <li><a href="http://localhost/Rental-Management-System/index.php">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-user" style="margin-right: 3px"></i>
+                    Rowland
+                    <i class="fa fa-chevron-down" style="font-size: .8em"></i>
+                </a>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#" class="logout">Logout</a></l>
+                </ul>
+            </li>
 
-            <?php if(isset($_SESSION['id'])): ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user" style="margin-right: 3px"></i>
-                        Rowland
-                        <i class="fa fa-chevron-down" style="font-size: .8em"></i>
-                    </a>
-                    <ul>
-                        <?php if($_SESSION['admin']): ?>
-                            <li><a href="#">Dashboard</a></li>
-                        <?php endif; ?>
-                            <li><a href="#" class="logout">Logout</a></l>
-                    </ul>
-                 </li>
-            <!-- If there are no session variables -->
-            <?php else: ?> 
-                <!-- <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li> -->
-            <?php endif; ?>   
+            <!-- <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Login</a></li> -->
+
         </ul>
-    </header>  
+    </header>
 
     <div class="form-container">
         <div class="auth-form">
@@ -116,7 +112,9 @@
                     <small>Error message</small>
                 </div>
 
-                <button type="submit" name="register-btn">Submit</button>
+                <button type="submit" name="register-btn" class="btn submit-btn">Submit</button>
+
+                <p>Or <a href="http://localhost/Rental-Management-System/login.php">Login</a></p>
             </form>
         </div>
     </div>

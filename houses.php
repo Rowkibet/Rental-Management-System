@@ -9,37 +9,33 @@
     <title>Homepage</title>
 </head>
 <body>
-    <header>
-        <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
+<header>
+        <a href="#" class="logo">
             <h1 class="logo-text">Logo</h1>
         </a>
 
         <ul class="nav">
-            <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-user" style="margin-right: 3px"></i>
+                    Rowland
+                    <i class="fa fa-chevron-down" style="font-size: .8em"></i>
+                </a>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#" class="logout">Logout</a></l>
+                </ul>
+            </li>
 
-            <?php if(isset($_SESSION['id'])): ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user" style="margin-right: 3px"></i>
-                        Rowland
-                        <i class="fa fa-chevron-down" style="font-size: .8em"></i>
-                    </a>
-                    <ul>
-                        <?php if($_SESSION['admin']): ?>
-                            <li><a href="#">Dashboard</a></li>
-                        <?php endif; ?>
-                            <li><a href="#" class="logout">Logout</a></l>
-                    </ul>
-                 </li>
-            <!-- If there are no session variables -->
-            <?php else: ?> 
-                <!-- <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li> -->
-            <?php endif; ?>   
+            <!-- <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Login</a></li> -->
+  
         </ul>
-    </header>    
+    </header>     
 
     <!-- page wrapper -->
     <div class="page-wrapper">
@@ -55,7 +51,7 @@
                     <p>Rent Amount: 12345</p>
                     <p>Status: Available</p>
                     
-                    <a href="single_house.html" class="btn book-btn"> Book Now</a>
+                    <a href="single_house.html" class="btn"> Book Now</a>
                 </div>
             </div>
 
@@ -69,7 +65,7 @@
                     <p>Rent Amount: 12345</p>
                     <p>Status: Available</p>
                     
-                    <a href="single_house.html" class="btn book-btn"> Book Now</a>
+                    <a href="single_house.html" class="btn"> Book Now</a>
                 </div>
             </div>
 
@@ -83,7 +79,7 @@
                     <p>Rent Amount: 12345</p>
                     <p>Status: Available</p>
                     
-                    <a href="single_house.html" class="btn book-btn"> Book Now</a>
+                    <a href="single_house.html" class="btn"> Book Now</a>
                 </div>
             </div>
         </div>

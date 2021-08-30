@@ -20,11 +20,12 @@ body {
     text-align: center;
     padding: 9.5px 9.5px;
     border-radius: 5px;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border: 1.5px rgb(65, 105, 225) solid;
     background-color: white;
     color: rgb(65, 105, 225);
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -34,6 +35,55 @@ body {
     transition: color 280ms ease-out;
     transition: border 280ms ease-out;
     transition: background-color 280ms ease-out;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.submit-btn {
+    border: 0;
+    background-color: rgb(65, 105, 225);
+    padding: 12px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: white;
+}
+
+.submit-btn.btn:hover {
+    background-color: rgb(49, 79, 170);
+    padding: 12px;
+}
+
+.small-btn {
+    width: 140px;
+    font-size: 0.95rem;
+    padding: 10px;
+}
+
+.small-btn.btn:hover {
+    padding: 10px;
+}
+
+.message {
+    width: 100%;
+    margin: 5px auto;
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.success {
+    color: #3a6e3a;
+    border: 1px solid #3a6e3a;
+    background: #bcf5bc;
+}
+
+.error {
+    color: #884b4b;
+    border: 1px solid #884b4b;
+    background: #f5bcbc;
 }
 
 /* HOMEPAGE */
@@ -119,7 +169,7 @@ header .menu-toggle {
 
 /* MAIN CONTENT */
 .houses-title {
-    margin: 10px auto 50px;
+    margin: 60px auto 30px;
     text-align: center;
     text-decoration: underline;
     font-weight: bold;
@@ -179,9 +229,7 @@ header .menu-toggle {
 }
 
 .browse-btn {
-    display: block;
-    margin: 50px auto;
-    padding: 10px;
+    margin: 25px auto 50px;
     width: 30%;
     text-align: center;
 }
@@ -215,12 +263,13 @@ header .menu-toggle {
 }
 
 .single-house .house-text {
+    display: grid;
     padding: 15px;
 }
 
-.book-btn.book-house {
-    position: relative;
-    bottom: 0;
+.house-text button {
+    align-self: end;
+    justify-self: end;
 }
 
 /* user profile */
@@ -228,9 +277,10 @@ header .menu-toggle {
     display: flex;
     width: 65%;
     height: 220px;
-    margin: 100px auto;
+    /* margin: 100px auto; */
+    margin: 80px auto 65px;
     background-color: white;
-    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+    box-shadow: 1rem 1rem 1rem -1rem #461b1b33;
     border-radius: 5px;
 }
 
@@ -279,31 +329,45 @@ header .menu-toggle {
 }
 
 .payment {
-    display: flex;
-    /* margin: 100px auto; */
+    /* display: flex; */
     background-color: white;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
     border-radius: 5px;
-    padding: 20px;
+    padding: 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.payment > h2 {
+.payment h2 {
     margin-bottom: 15px;
+    text-align: center;
 }
 
-.payment table {
+.payment div {
     margin-bottom: 30px;
 }
 
-.payment table, .payment td {
-    border: 1px solid black;
+.rent-payment table, .rent-payment td {
+    border-spacing: 30px 10px;
 }
 
-.payment th {
-    display: table-header-group;
+.payment-history {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.payment-history th {
+    text-align: center;
+}
+
+.payment-history table, .payment-history th, .payment-history td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.payment-history th, .payment-history td {
+    padding: 10px 5px;
 }
 
 .issue-form {
@@ -316,6 +380,20 @@ header .menu-toggle {
 .issue-form h2 {
     text-align: center;
     margin-bottom: 15px;
+}
+
+.issue-btn {
+    border: 0;
+    background-color: rgb(65, 105, 225);
+    padding: 12px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: white;
+}
+
+.issue-btn.btn:hover {
+    background-color: rgb(49, 79, 170);
+    padding: 12px;
 }
 
 /* footer */
@@ -445,13 +523,13 @@ footer h1, footer h2 {
 /* AUTHORIZATION PAGES */
 .form-container {
     height: calc(100% - 80px);
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
 .auth-form {
+    background-color: white;
     border-radius: 10px;
     box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
     width: 420px;
@@ -528,4 +606,22 @@ footer h1, footer h2 {
 .auth-form button {
     width: 100%;
     padding: 12px;
+    margin-bottom: 20px;
+}
+
+.auth-form form p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form form p a {
+    display: inline-block;
+    margin-left: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.auth-form form p a:hover {
+    text-decoration: underline;
 }

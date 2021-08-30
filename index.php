@@ -1,3 +1,5 @@
+<?php include("C:xampp\htdocs\Rental-Management-System\controllers\users.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +12,12 @@
 </head>
 <body>
     <header>
-        <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
+        <a href="http://localhost/Rental-Management-System/index.php" class="logo">
             <h1 class="logo-text">Logo</h1>
         </a>
 
         <ul class="nav">
-            <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
+            <li><a href="http://localhost/Rental-Management-System/index.php">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
 
@@ -23,23 +25,34 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-user" style="margin-right: 3px"></i>
-                        Rowland
+                        <?php echo $_SESSION['username']; ?>
                         <i class="fa fa-chevron-down" style="font-size: .8em"></i>
                     </a>
                     <ul>
-                        <?php if($_SESSION['admin']): ?>
-                            <li><a href="#">Dashboard</a></li>
-                        <?php endif; ?>
-                            <li><a href="#" class="logout">Logout</a></l>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="http://localhost/Rental-Management-System/user-profile.php">Profile</a></li>
+                        <li><a href="http://localhost/Rental-Management-System/logout.php" class="logout">Logout</a></l>
                     </ul>
-                 </li>
-            <!-- If there are no session variables -->
-            <?php else: ?> 
-                <!-- <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li> -->
-            <?php endif; ?>   
+                </li>
+            <?php else: ?>
+                <li><a href="http://localhost/Rental-Management-System/register.php">Sign Up</a></li>
+                <li><a href="http://localhost/Rental-Management-System/login.php">Login</a></li>
+            <?php endif; ?>
         </ul>
     </header>    
+
+    <!-- Login Message -->
+    <?php if(isset($_SESSION['message'])): ?>
+        <div class="message <?php echo $_SESSION['type']; ?>">
+            <li><?php echo $_SESSION['message']; ?></li>
+
+            <!-- The msg will disappear when the page is refreshed -->
+            <?php
+                unset($_SESSION['message']);
+                unset($_SESSION['type']);
+            ?>
+        </div>
+    <?php endif; ?>
 
     <!-- page wrapper -->
     <div class="page-wrapper">
@@ -88,7 +101,7 @@
             </div>
         </div>
 
-        <a href="single_house.html" class="btn browse-btn"> Browse More Houses</a>
+        <a href="single_house.html" class="btn browse-btn submit-btn"> Browse More Houses</a>
 
         <h1 class="houses-title"> Apartments </h1>
         <div class="house-wrapper">
@@ -135,8 +148,7 @@
             </div>
         </div>
 
-        <a href="single_house.html" class="btn browse-btn"> Browse More Apartments</a>
-
+        <a href="single_house.html" class="btn browse-btn submit-btn"> Browse More Apartments</a>
 
         <footer>
             <div class="footer-wrapper">
