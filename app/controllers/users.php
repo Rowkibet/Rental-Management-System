@@ -68,6 +68,33 @@ function validateUser($user) {
     return $errors;
 }
 
+//validate user login
+function validateLogin($user_data, $user_record) {
+    $errors=array();
+    $checkPassword = true;
+
+    //prevents null error
+    if(!empty($user_data['tenant_email']) && (!empty($user_record))) {
+        $checkPassword = password_verify($user_data['tenant_password'], $user_record['tenant_password']);
+    }
+    
+    if(empty($user_data['tenant_email'])) {
+        array_push($errors, 'Email is required');
+    } elseif(empty($user_record)) {
+        array_push($errors, "Invalid Email");
+    } elseif($user_record && !empty($user_data['tenant_password'])) {
+        if($checkPassword == false) {
+            array_push($errors, "Invalid Password");
+        }
+    }
+
+    if(empty($user_data['tenant_password'])) {
+        array_push($errors, 'Password is required');
+    }
+
+    return $errors;
+}
+
 //User Registration
 if(isset($_POST['register-btn'])) {
     $errors = validateUser($_POST);
@@ -95,8 +122,12 @@ if(isset($_POST['register-btn'])) {
 
 if(isset($_POST['login-btn'])) {
     $user = selectOne('tenant', ['tenant_email' => $_POST['tenant_email']]);
+    $errors = validateLogin($_POST, $user);
 
-    if($user && password_verify($_POST['tenant_password'], $user['tenant_password'])) {
+    if(count($errors) == 0) {
         loginUser($user);
-    }
+    } else {
+        $tenant_email = $_POST['tenant_email'];
+        $tenant_password = $_POST['tenant_password'];
+    }  
 }

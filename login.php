@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="fontawesome/css/all.min.css"  rel="stylesheet">
+    <link href="assets/fontawesome/css/all.min.css"  rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Login Page</title>
 </head>
@@ -24,9 +24,17 @@
             </div>
     
             <form action="login.php" method="post" novalidate>
+                <!-- error messages -->
+                <?php if(count($errors) > 0): ?>
+                    <div class="message error">
+                        <?php foreach ($errors as $error): ?>
+                            <li><?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
                 <div class="form-control">
                     <label for="">Email Address</label>
-                    <input type="email" name="tenant_email" id="email">
+                    <input type="email" name="tenant_email" value="<?php echo $tenant_email; ?>" id="email">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -34,7 +42,7 @@
 
                 <div class="form-control">
                     <label for="">Password</label>
-                    <input type="password" name="tenant_password" id="password">
+                    <input type="password" name="tenant_password" value="<?php echo $tenant_password; ?>" id="password">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
