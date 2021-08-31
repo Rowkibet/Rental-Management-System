@@ -24,9 +24,18 @@
             </div>
     
             <form action="register.php" method="post" novalidate>
+                <!-- error messages -->
+                <?php if(count($errors) > 0): ?>
+                    <div class="message error">
+                        <?php foreach ($errors as $error): ?>
+                            <li><?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
                 <div class="form-control">
                     <label for="">First Name</label>
-                    <input type="text" name="tenant_fname" value= "" id="firstname">
+                    <input type="text" name="tenant_fname" value= "<?php echo $tenant_fname; ?>" id="firstname">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -34,7 +43,7 @@
 
                 <div class="form-control">
                     <label for="">Last Name</label>
-                    <input type="text" name="tenant_lname" id="lastname">
+                    <input type="text" name="tenant_lname" value= "<?php echo $tenant_lname; ?>" id="lastname">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -42,7 +51,7 @@
 
                 <div class="form-control">
                     <label for="">Date Of Birth</label>
-                    <input type="date" name="tenant_DOB" id="dob">
+                    <input type="date" name="tenant_DOB" value= "<?php echo $tenant_DOB; ?>" id="dob">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -50,7 +59,7 @@
 
                 <div class="form-control">
                     <label for="">Email Address</label>
-                    <input type="email" name="tenant_email" id="email">
+                    <input type="email" name="tenant_email" value= "<?php echo $tenant_email; ?>" id="email">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -58,7 +67,7 @@
 
                 <div class="form-control">
                     <label for="">Phone Number</label>
-                    <input type="tel" name="tenant_phone_no" id="phone-number">
+                    <input type="tel" name="tenant_phone_no" value= "<?php echo $tenant_phone_no; ?>" id="phone-number">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -66,7 +75,7 @@
 
                 <div class="form-control">
                     <label for=""> Occupation </label>
-                    <input type="text" name="tenant_occupation" id="occupation">
+                    <input type="text" name="tenant_occupation" value= "<?php echo $tenant_occupation; ?>" id="occupation">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
@@ -74,7 +83,7 @@
 
                 <div class="form-control">
                     <label for="">Password</label>
-                    <input type="password" name="tenant_password" id="password">
+                    <input type="password" name="tenant_password" value= "<?php echo $tenant_password; ?>" id="password">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small style="margin-right: -5px">Error message</small>
@@ -82,7 +91,7 @@
 
                 <div class="form-control">
                     <label for="">Confirm Password</label>
-                    <input type="password" name="tenant_passwordConf" id="confirm-password">
+                    <input type="password" name="tenant_passwordConf" value= "<?php echo $tenant_passwordConf; ?>" id="confirm-password">
                     <i class="fas fa-check-circle icon"></i>
                     <i class="fas fa-exclamation-circle icon"></i>
                     <small>Error message</small>
