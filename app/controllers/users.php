@@ -1,5 +1,5 @@
 <?php
-include("C:xampp/htdocs/Rental-Management-System/database/db.php");
+include("C:xampp/htdocs/Rental-Management-System/app/database/db.php");
 
 function loginUser($user) {
     //Log User In

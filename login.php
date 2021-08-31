@@ -1,4 +1,4 @@
-<?php include("C:xampp\htdocs\Rental-Management-System\controllers\users.php"); ?>
+<?php include("C:xampp\htdocs\Rental-Management-System\app\controllers\users.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,38 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="fontawesome/css/all.min.css"  rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Login Page</title>
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo">
-            <h1 class="logo-text">Logo</h1>
-        </a>
-
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-user" style="margin-right: 3px"></i>
-                    Rowland
-                    <i class="fa fa-chevron-down" style="font-size: .8em"></i>
-                </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#" class="logout">Logout</a></l>
-                </ul>
-            </li>
-
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-
-        </ul>
-    </header> 
+    <!-- navigation bar  -->
+    <?php
+        include("C:xampp\htdocs\Rental-Management-System\includes\header.php");
+    ?>
     
     <div class="form-container">
         <div class="auth-form">
