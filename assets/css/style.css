@@ -105,7 +105,6 @@ header .logo {
 
 header .logo-text {
     margin: 9px;
-    /* font-family: 'Candal', serif; */
 }
 
 header ul {
@@ -277,7 +276,6 @@ header .menu-toggle {
     display: flex;
     width: 65%;
     height: 220px;
-    /* margin: 100px auto; */
     margin: 80px auto 65px;
     background-color: white;
     box-shadow: 1rem 1rem 1rem -1rem #461b1b33;
@@ -486,7 +484,6 @@ footer h1, footer h2 {
 }
 
 .contact-us .social-links {
-    /* border: 1px solid red; */
     display: flex;
 }
 
@@ -503,7 +500,6 @@ footer h1, footer h2 {
 }
 
 .social-links i {
-    /* border: 1px solid green; */
     border: 1px solid grey;
     border-radius: 10px;
     width: 100%;

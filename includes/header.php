@@ -19,7 +19,7 @@
                 <li>
                     <a href="#">
                         <i class="fa fa-user" style="margin-right: 3px"></i>
-                        <?php echo $_SESSION['username']; ?>
+                        <?php echo $_SESSION['first_name']; ?>
                         <i class="fa fa-chevron-down" style="font-size: .8em"></i>
                     </a>
                     <ul>

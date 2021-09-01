@@ -16,7 +16,10 @@
         include("C:xampp\htdocs\Rental-Management-System\includes\header.php");
     ?>
 
-    <!-- main content -->
+    <!-- success message -->
+    <?php
+        include("C:xampp/htdocs/Rental-Management-System/includes/flashMessage.php");
+    ?>
 
     <div class="user-page-wrapper">
         <div class="user-wrapper">
@@ -25,28 +28,28 @@
                     <img src="assets/images/user-icon.png" alt="">
                 </div>
                 <div class="user-details">
-                    <p>Mike Brown</p>
-                    <p>Occupation: Self Employed</p>
-                    <p>Tenant ID: 12345</p>
-                    <a href="#">Edit Details</a>
+                    <p><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?></p>
+                    <p>Occupation: <?php echo $_SESSION['occupation']; ?></p>
+                    <p>Tenant ID: <?php echo $_SESSION['id']; ?></p>
+                    <a href="edit_user.php?id=<?php echo $_SESSION['id']; ?>">Edit Details</a>
                     <a href="#">Add Photo</a>
                     <!-- <a href="#">Change Photo</a> -->
-                    <a href="#">Change Password</a>
+                    <a href="password-change.php?id=<?php echo $_SESSION['id']; ?>">Change Password</a>
                 </div> 
             </div>
             <div class="user-more-info">
                 <table>
                     <tr>
                         <td>Phone:</td>
-                        <td>12345678</td>
+                        <td><?php echo $_SESSION['phone_no']; ?></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td>mikebrown@gmail.com</td>
+                        <td><?php echo $_SESSION['email']; ?></td>
                     </tr>
                     <tr>
                         <td>Birthday:</td>
-                        <td>23rd September</td>
+                        <td><?php echo $_SESSION['dob']; ?></td>
                     </tr>
                 </table>
             </div>

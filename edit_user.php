@@ -19,15 +19,17 @@
     <div class="form-container">
         <div class="auth-form">
             <div class="form-header">
-                <h2>Sign Up</h2>
+                <h2>Edit User Details</h2>
                 <p>Please fill in this form with your details</p>
             </div>
     
-            <form action="register.php" method="post" novalidate>
+            <form action="edit_user.php" method="post" novalidate>
                 <!-- error messages -->
                 <?php
                     include("C:xampp/htdocs/Rental-Management-System/includes/formErrors.php");
                 ?>
+
+                <input type="hidden" name="id" value="<?php echo $tenant_id; ?>">
 
                 <div class="form-control">
                     <label for="">First Name</label>
@@ -77,25 +79,7 @@
                     <small>Error message</small>
                 </div>
 
-                <div class="form-control">
-                    <label for="">Password</label>
-                    <input type="password" name="tenant_password" value= "<?php echo $tenant_password; ?>" id="password">
-                    <i class="fas fa-check-circle icon"></i>
-                    <i class="fas fa-exclamation-circle icon"></i>
-                    <small style="margin-right: -5px">Error message</small>
-                </div>
-
-                <div class="form-control">
-                    <label for="">Confirm Password</label>
-                    <input type="password" name="tenant_passwordConf" value= "<?php echo $tenant_passwordConf; ?>" id="confirm-password">
-                    <i class="fas fa-check-circle icon"></i>
-                    <i class="fas fa-exclamation-circle icon"></i>
-                    <small>Error message</small>
-                </div>
-
-                <button type="submit" name="register-btn" class="btn submit-btn">Submit</button>
-
-                <p>Or <a href="http://localhost/Rental-Management-System/login.php">Login</a></p>
+                <button type="submit" name="update-user" class="btn submit-btn">Update</button>
             </form>
         </div>
     </div>
