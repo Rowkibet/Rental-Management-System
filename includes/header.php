@@ -23,7 +23,7 @@
                         <i class="fa fa-chevron-down" style="font-size: .8em"></i>
                     </a>
                     <ul>
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="admin/index.php">Dashboard</a></li>
                         <li><a href="user-profile.php">Profile</a></li>
                         <li><a href="logout.php" class="logout">Logout</a></l>
                     </ul>

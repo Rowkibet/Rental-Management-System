@@ -1,0 +1,128 @@
+body {
+    height: 100vh;
+}
+
+table {
+    margin: 20px auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px 5px;
+}
+
+.flex {
+    display: flex;
+}
+
+.admin-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+/* navigation sidebar */
+.left-sidebar {
+    flex: 2;
+    height: 100%;
+    background: rgb(47, 83, 194);
+}
+
+.left-sidebar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    color: aliceblue;
+}
+
+.left-sidebar ul li a {
+    display: block;
+    border-bottom: 1px solid rgb(33, 59, 136);
+    padding: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.left-sidebar ul li a:hover {
+    background: rgb(33, 59, 136);
+}
+
+.drop-down-menu {
+    position: relative;
+}
+
+.drop-down-menu ul {
+    background-color:  white;
+    border-radius: 5px;
+    width: 185px;
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: -40px;
+}
+
+.drop-down-menu:hover ul {
+    display: block;
+}
+
+.drop-down-menu ul li a {
+    color: black;
+    border-bottom: none;
+}
+
+.drop-down-menu ul li a:hover {
+    background: #d5d6d6;
+}
+
+.admin-content {
+    flex: 8;
+    height: 100%;
+    padding: 40px 100px 100px;
+}
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    grid-gap: 50px
+}
+
+.preview-card {
+    background-color: white;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+    border-radius: 5px;
+    height: 200px;
+}
+
+.preview-card p {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.preview-card p:nth-child(2) {
+    font-size: 3em;
+}
+
+.payments-preview {
+    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 30px;
+}
+
+.payments-preview .preview-card {
+    flex-direction: column;
+    height: auto;
+    padding: 0 20px;
+}
+
+.payments-preview h2 {
+    margin-top: 20px;
+    text-align: center;
+}
