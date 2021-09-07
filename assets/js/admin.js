@@ -1,7 +1,8 @@
-const menuArray = document.querySelectorAll('.drop-down-menu');
+const arrowArray = document.querySelectorAll('i');
 
-menuArray.forEach(menu => {
-    menu.addEventListener('click', () => {
-        menu.classList.toggle("visible");
-    });   
+arrowArray.forEach(arrow => {
+    arrow.addEventListener('click', event => {
+        const arrowParent = event.target.parentElement.parentElement;
+        arrowParent.classList.toggle('visible');
+    }); 
 });

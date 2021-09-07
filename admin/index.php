@@ -35,22 +35,31 @@
     <div class="admin-wrapper">
         <!-- left sidebar -->
         <div class="left-sidebar">
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Tenants</a></li>
-                <li class="drop-down-menu"><a href="#">Houses <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
+        <ul>
+                <li><a href="index.php">Dashboard</a></li>
+                <li class="drop-down-menu"><a href="#">Tenants <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
                 <ul>
-                    <li><a href="#">Maisonettes</a></li>
-                    <li><a href="#">Apartments</a></li>
+                    <li><a href="tenants/index.php">Manage Tenants</a></li>
+                    <li><a href="tenants/create.php">Add Tenant</a></li>
                 </ul>
                 </li>
-                <li><a href="#">Invoices</a></li>
-                <li><a href="#">Payments</a></li>
-                <li><a href="#">Outstanding Balances</a></li>
+                <li class="drop-down-menu"><a href="#">Houses <i class="fa fa-chevron-down" style="font-size: .8em"></i></i></a>
+                <ul>
+                    <li><a href="houses/index.php">Manage Houses</a></li>
+                    <li><a href="houses/create.php">Add House</a></li>
+                </ul>
+                </li>
+                <li class="drop-down-menu"><a href="#">Payments <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
+                <ul>
+                    <li><a href="#">Invoices</a></li>
+                    <li><a href="#">Receipts</a></li>
+                    <li><a href="#">Outstanding Balances</a></li>
+                </ul>
+                </li>
                 <li class="drop-down-menu"><a href="#">Admin Users <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
                 <ul>
-                    <li><a href="#">Register User</a></li>
-                    <li><a href="#">View Users</a></li>
+                    <li><a href="admin-users/index.php">Manage Users</a></li>
+                    <li><a href="admin-users/create.php">Add User</a></li>
                 </ul>
                 </li>
             </ul>

@@ -11,13 +11,17 @@ th, td {
     padding: 10px 5px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .flex {
     display: flex;
 }
 
 .admin-wrapper {
     display: flex;
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
 }
 
 /* navigation sidebar */
@@ -66,6 +70,7 @@ th, td {
 }
 
 .drop-down-menu ul li a {
+    padding: 10px;
     color: black;
     border-bottom: none;
     position: relative;
@@ -81,6 +86,7 @@ th, td {
     padding: 40px 100px 100px;
 }
 
+/* dashboard */
 .card-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -123,4 +129,72 @@ th, td {
 .payments-preview h2 {
     margin-top: 20px;
     text-align: center;
+}
+
+/*other pages */
+.admin-content h2 {
+    /* margin: 0 auto; */
+    text-align: center;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border: none;
+}
+
+.table-wrapper th, .table-wrapper td {
+    padding: 15px;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.edit {
+    color: green;
+}
+
+.delete {
+    color: red;
+}
+
+.view {
+    color: blue;
+}
+
+.edit:hover,
+.delete:hover,
+.view:hover {
+    text-decoration: underline;
+}
+
+.form-control .checkbox {
+    display: inline-block;
+    width: 2%;
+}
+
+/* view page */
+.view-details-wrapper {
+    background-color: white;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+    border-radius: 5px;
+}
+
+.view-details {
+    max-width: 620px;
+    display: grid;
+    grid-template-columns: minmax(150px,230px) max-content;
+    margin: 0 auto;
+}
+
+.view-details .image img {
+    width: 100%;
+}
+
+.view-details table {
+    margin-left: 20px;
+}
+
+.view-details a.btn {
+    grid-column: 2/3;
+    justify-self: end;
 }
