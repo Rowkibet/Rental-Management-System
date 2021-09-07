@@ -38,7 +38,7 @@
             <ul>
                 <li><a href="#">Dashboard</a></li>
                 <li><a href="#">Tenants</a></li>
-                <li class="drop-down-menu"><a href="#">Houses</a>
+                <li class="drop-down-menu"><a href="#">Houses <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
                 <ul>
                     <li><a href="#">Maisonettes</a></li>
                     <li><a href="#">Apartments</a></li>
@@ -47,7 +47,7 @@
                 <li><a href="#">Invoices</a></li>
                 <li><a href="#">Payments</a></li>
                 <li><a href="#">Outstanding Balances</a></li>
-                <li class="drop-down-menu"><a href="#">Admin Users</a>
+                <li class="drop-down-menu"><a href="#">Admin Users <i class="fa fa-chevron-down" style="font-size: .8em"></i></a>
                 <ul>
                     <li><a href="#">Register User</a></li>
                     <li><a href="#">View Users</a></li>
@@ -145,6 +145,7 @@
     </div>
     <!-- // Admin Page Wrapper -->
 
+    <script src="..\assets\js\admin.js"></script>
 
 </body>
 </html>
