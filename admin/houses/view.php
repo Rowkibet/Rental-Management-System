@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/houses.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,39 +79,39 @@
                         <table>
                             <tr>
                                 <td>House ID:</td>
-                                <td>1</td>
+                                <td><?php echo $house_id; ?></td>
                             </tr>
                             <tr>
                                 <td>House Type:</td>
-                                <td>Maisonette</td>
+                                <td><?php echo $house_type; ?></td>
                             </tr>
                             <tr>
                                 <td>Name of Tenant:</td>
-                                <td>John Mwangi</td>
+                                <td><?php echo $tenant_name; ?></td>
                             </tr>
                             <tr>
                                 <td>Rooms:</td>
-                                <td>2</td>
+                                <td><?php echo $house_rooms; ?></td>
                             </tr>
                             <tr>
                                 <td>Deposit:</td>
-                                <td>12345</td>
+                                <td><?php echo $house_deposit; ?></td>
                             </tr>
                             <tr>
                                 <td>Rent:</td>
-                                <td>12345 </td>
+                                <td><?php echo $house_rent; ?></td>
                             </tr>
                             <tr>
                                 <td>Rent Status:</td>
-                                <td>Pending</td>
+                                <td><?php echo $rent_status; ?></td>
                             </tr>
                             <tr>
                                 <td>House Condition:</td>
-                                <td>Good</td>
+                                <td><?php echo $house_condition; ?></td>
                             </tr>
                         </table>
                     </div>
-                    <a href="#" class="btn submit-btn small-btn">Edit Details</a>
+                    <a href="edit.php?edit_id=<?php echo $house_id; ?>" class="btn submit-btn small-btn">Edit Details</a>
                 </div>
             </div>
         <!-- // Admin Content -->

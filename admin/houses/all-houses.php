@@ -91,22 +91,17 @@
                     </thead>
 
                     <!-- table rows -->
-                    <tr>
-                        <td>1</td>
-                        <td>Maisonette</td>
-                        <td>Available</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>    
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Apartment</td>
-                        <td>Occupied</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>
-                    </tr>
+                    <?php foreach($allHouses as $key => $house): ?>
+                        <tr>
+                            <td><?php echo $house['id']; ?></td>
+                            <td><?php echo $house['house_type']; ?></td>
+                            <td><?php echo $house['house_status'] == 1 ? 'Occupied' : 'Available'; ?></td>
+                            <td><a href="view.php?view_id=<?php echo $house['id']; ?>" class="view">view all details</a></td>
+                            <td><a href="edit.php?edit_id=<?php echo $house['id']; ?>" class="edit">edit</a></td>
+                            <td><a href="#" class="delete">delete</a></td>    
+                        </tr>
+                    <?php endforeach; ?> 
+
                 </table>
             </div>
             
