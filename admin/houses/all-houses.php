@@ -71,9 +71,9 @@
         <!-- Admin content -->
         <div class="admin-content">
 
-            <a href="all-houses.php" class="btn submit-btn small-btn">All Houses</a>
+            <a href="index.php" class="btn submit-btn small-btn" style="width: 200px">Occupied Houses</a>
 
-            <h2 class="page-title">Occupied Houses</h2>
+            <h2 class="page-title">All Houses</h2>
 
             <!-- Success Message -->
             <?php
@@ -85,24 +85,24 @@
                     <!-- columns and their names -->
                     <thead>
                         <th>House No</th>
-                        <th>Name of Tenant</th>
-                        <th>Payment</th>
+                        <th>House Type</th>
+                        <th>House Status</th>
                         <th colspan="3">Action</th>
                     </thead>
 
                     <!-- table rows -->
                     <tr>
                         <td>1</td>
-                        <td>John Mwangi</td>
-                        <td>Pending</td>
+                        <td>Maisonette</td>
+                        <td>Available</td>
                         <td><a href="#" class="view">view all details</a></td>
                         <td><a href="#" class="edit">edit</a></td>
                         <td><a href="#" class="delete">delete</a></td>    
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>John Mwangi</td>
-                        <td>Cleared</td>
+                        <td>Apartment</td>
+                        <td>Occupied</td>
                         <td><a href="#" class="view">view all details</a></td>
                         <td><a href="#" class="edit">edit</a></td>
                         <td><a href="#" class="delete">delete</a></td>

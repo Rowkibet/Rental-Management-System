@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/houses.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,40 +73,81 @@
 
         <h2 class="page-title">Add House</h2>
 
+        <!-- error messages -->
+        <?php
+            include("C:xampp/htdocs/Rental-Management-System/includes/formErrors.php");
+        ?>
+
         <form action="create.php" method="post">
             <div class="form-control">
                 <label>House Type</label>
-                <input type="text" name="house_type" class="text-input">
+                <select name="house_type" id="">
+                    <?php if($house_type == 'Maisonette'): ?>
+                        <option value=""></option>
+                        <option selected value="Maisonette">Maisonette</option>
+                        <option value="Apartment">Apartment</option>
+                    <?php elseif($house_type == 'Apartment'): ?>
+                        <option value=""></option>
+                        <option value="Maisonette">Maisonette</option>
+                        <option selected value="Apartment">Apartment</option>
+                    <?php else: ?>
+                        <option value=""></option>
+                        <option value="Maisonette">Maisonette</option>
+                        <option value="Apartment">Apartment</option>
+                    <?php endif; ?>
+                </select>
             </div>
             <div class="form-control">
                 <label>Rooms</label>
-                <input type="text" name="rooms" class="text-input">
+                <input type="text" name="house_rooms" value="<?php echo $house_rooms; ?>" class="text-input">
             </div>
             <div class="form-control">
                 <label>Deposit</label>
-                <input type="text" name="deposit" class="text-input">
+                <input type="text" name="house_deposit" value="<?php echo $house_deposit; ?>" class="text-input">
             </div>
             <div class="form-control">
                 <label>Rent Price</label>
-                <input type="text" name="rent_price" class="text-input">
+                <input type="text" name="house_rent" value="<?php echo $house_rent; ?>" class="text-input">
             </div>
             <div class="form-control">
             <label>Payment Period</label>
             <select name="payment_period" id="">
-                <option value=""></option>
-                <option value="1">Weekly</option>
-                <option value="2">Monthly</option>
-                <option value="3">Annually</option>
+                <?php if($payment_period == 'Weekly'): ?>
+                    <option value=""></option>
+                    <option selected value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Annually">Annually</option>
+                <?php elseif($payment_period == 'Monthly'): ?>
+                    <option value=""></option>
+                    <option value="Weekly">Weekly</option>
+                    <option selected value="Monthly">Monthly</option>
+                    <option value="Annually">Annually</option>
+                <?php elseif($payment_period == 'Annually'): ?>
+                    <option value=""></option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                    <option selected value="Annually">Annually</option>
+                <?php else: ?>
+                    <option value=""></option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                    <option value="Annually">Annually</option>
+                <?php endif; ?>
             </select>
             </div>
 
             <div class="form-control">
-                <input type="checkbox" name="house_status" class="checkbox">
-                House Status
+                <?php if($house_status == 1): ?>
+                    <input checked type="checkbox" name="house_status" class="checkbox">
+                    House Status
+                <?php else: ?>
+                    <input type="checkbox" name="house_status" class="checkbox">
+                    House Status
+                <?php endif; ?>
             </div>
             
             <div>
-                <button type="submit" class="btn submit-btn small-btn">Add House</button>
+                <button type="submit" name="add-house" class="btn submit-btn small-btn">Add House</button>
             </div>
         </form>
         <!-- // Admin Content -->
