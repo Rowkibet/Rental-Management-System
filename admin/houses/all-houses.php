@@ -80,6 +80,10 @@
                 include("C:xampp/htdocs/Rental-Management-System/includes/flashMessage.php");
             ?>
 
+            <?php if(isset($_SESSION['message'])): ?>
+                <p>success message</p>
+            <?php endif; ?>
+
             <div class="table-wrapper">
                 <table>
                     <!-- columns and their names -->
@@ -98,7 +102,7 @@
                             <td><?php echo $house['house_status'] == 1 ? 'Occupied' : 'Available'; ?></td>
                             <td><a href="view.php?view_id=<?php echo $house['id']; ?>" class="view">view all details</a></td>
                             <td><a href="edit.php?edit_id=<?php echo $house['id']; ?>" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>    
+                            <td><a href="edit.php?del_id=<?php echo $house['id']; ?>" class="delete">delete</a></td>    
                         </tr>
                     <?php endforeach; ?> 
 

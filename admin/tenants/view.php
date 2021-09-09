@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,43 +79,43 @@
                         <table>
                             <tr>
                                 <td>Tenant ID:</td>
-                                <td>1</td>
+                                <td><?php echo $tenant_id; ?></td>
                             </tr>
                             <tr>
                                 <td>First Name:</td>
-                                <td>John</td>
+                                <td><?php echo $tenant_fname; ?></td>
                             </tr>
                             <tr>
                                 <td>Last Name:</td>
-                                <td>Mwangi</td>
+                                <td><?php echo $tenant_lname; ?></td>
                             </tr>
                             <tr>
                                 <td>Date of Birth:</td>
-                                <td>2021-08-01</td>
+                                <td><?php echo $tenant_DOB; ?></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td>johnmwangi@gmail.com</td>
+                                <td><?php echo $tenant_email; ?></td>
                             </tr>
                             <tr>
                                 <td>Phone Number:</td>
-                                <td>0723185398</td>
+                                <td><?php echo $tenant_phone_no; ?></td>
                             </tr>
                             <tr>
                                 <td>Occupation:</td>
-                                <td>Self Employed</td>
+                                <td><?php echo $tenant_occupation; ?></td>
                             </tr>
                             <tr>
                                 <td>House No:</td>
-                                <td>1</td>
+                                <td><?php echo $tenant_house; ?></td>
                             </tr>
                             <tr>
                                 <td>Rent Status:</td>
-                                <td>Pending</td>
+                                <td><?php echo $tenant_rent_status; ?></td>
                             </tr>
                         </table>
                     </div>
-                    <a href="#" class="btn submit-btn small-btn">Edit Details</a>
+                    <a href="edit.php?id=<?php echo $tenant_id; ?>" class="btn submit-btn small-btn">Edit Details</a>
                 </div>
             </div>
         <!-- // Admin Content -->

@@ -1,3 +1,6 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +73,11 @@
         <div class="admin-content">
             <h2 class="page-title">Manage Tenants</h2>
 
+            <!-- Success Message -->
+            <?php
+                include("C:xampp/htdocs/Rental-Management-System/includes/flashMessage.php");
+            ?>
+
             <div class="table-wrapper">
                 <table>
                     <!-- columns and their names -->
@@ -81,22 +89,17 @@
                     </thead>
 
                     <!-- table rows -->
-                    <tr>
-                        <td>1</td>
-                        <td>John Mwangi</td>
-                        <td>073185398</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>    
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>John Mwangi</td>
-                        <td>073185398</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>
-                    </tr>
+                    <?php foreach($allTenants as $key => $tenant): ?>
+                        <tr>
+                            <td><?php echo $key + 1; ?></td>
+                            <td><?php echo $tenant['tenant_fname'] . " " . $tenant['tenant_lname']; ?></td>
+                            <td><?php echo $tenant['tenant_phone_no']; ?></td>
+                            <td><a href="view.php?view_id=<?php echo $tenant['id']; ?>" class="view">view all details</a></td>
+                            <td><a href="edit.php?id=<?php echo $tenant['id']; ?>" class="edit">edit</a></td>
+                            <td><a href="edit.php?del_id=<?php echo $tenant['id']; ?>" class="delete">delete</a></td>    
+                        </tr>
+                    <?php endforeach; ?> 
+
                 </table>
             </div>
             

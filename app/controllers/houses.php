@@ -130,3 +130,19 @@ if(isset($_POST['update-house'])) {
         $house_status = isset($_POST['house_status']) ? 1 : 0;
     }
 }
+
+//delete house
+if(isset($_GET['del_id'])) {
+    $id = $_GET['del_id'];
+    $count = delete($table, $id);
+
+    if($count == 1) {
+        $_SESSION['message'] = 'House deleted successfully';
+        $_SESSION['type'] = 'success';
+        header('location: http://localhost/Rental-Management-System/admin/houses/all-houses.php');
+    } else {
+        $_SESSION['message'] = 'Deleting house failed';
+        $_SESSION['type'] = 'error';
+        header('location: http://localhost/Rental-Management-System/admin/houses/all-houses.php');
+    }
+}
