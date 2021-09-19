@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,36 +78,36 @@
                     <div class="details">
                         <table>
                             <tr>
-                                <td>Tenant ID:</td>
-                                <td>1</td>
+                                <td>User ID:</td>
+                                <td><?php echo $user_id; ?></td>
                             </tr>
                             <tr>
                                 <td>First Name:</td>
-                                <td>John</td>
+                                <td><?php echo $user_fname; ?></td>
                             </tr>
                             <tr>
                                 <td>Last Name:</td>
-                                <td>Mwangi</td>
+                                <td><?php echo $user_lname; ?></td>
                             </tr>
                             <tr>
                                 <td>Date of Birth:</td>
-                                <td>2021-08-01</td>
+                                <td><?php echo $user_DOB; ?></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td>johnmwangi@gmail.com</td>
+                                <td><?php echo $user_email; ?></td>
                             </tr>
                             <tr>
                                 <td>Phone Number:</td>
-                                <td>0723185398</td>
+                                <td><?php echo $user_phone_no; ?></td>
                             </tr>
                             <tr>
                                 <td>Occupation:</td>
-                                <td>Self Employed</td>
+                                <td><?php echo $user_occupation; ?></td>
                             </tr>
                         </table>
                     </div>
-                    <a href="#" class="btn submit-btn small-btn">Edit Details</a>
+                    <a href="edit.php?edit_admin_id=<?php echo $user_id; ?>" class="btn submit-btn small-btn">Edit Details</a>
                 </div>
             </div>
         <!-- // Admin Content -->

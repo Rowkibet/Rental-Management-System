@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +72,11 @@
         <div class="admin-content">
             <h2 class="page-title">Manage Admin Users</h2>
 
+            <!-- Success Message -->
+            <?php
+                include("C:xampp/htdocs/Rental-Management-System/includes/flashMessage.php");
+            ?>
+
             <div class="table-wrapper">
                 <table>
                     <!-- columns and their names -->
@@ -81,22 +88,17 @@
                     </thead>
 
                     <!-- table rows -->
-                    <tr>
-                        <td>1</td>
-                        <td>John Mwangi</td>
-                        <td>073185398</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>    
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>John Mwangi</td>
-                        <td>073185398</td>
-                        <td><a href="#" class="view">view all details</a></td>
-                        <td><a href="#" class="edit">edit</a></td>
-                        <td><a href="#" class="delete">delete</a></td>
-                    </tr>
+                    <?php foreach($allAdminUsers as $key => $adminUser): ?>
+                        <tr>
+                            <td><?php echo $key + 1; ?></td>
+                            <td><?php echo $adminUser['user_fname'] . " " . $adminUser['user_lname']; ?></td>
+                            <td><?php echo $adminUser['user_phone_no']; ?></td>
+                            <td><a href="view.php?view_admin_id=<?php echo $adminUser['id']; ?>" class="view">view all details</a></td>
+                            <td><a href="edit.php?edit_admin_id=<?php echo $adminUser['id']; ?>" class="edit">edit</a></td>
+                            <td><a href="edit.php?del_admin_id=<?php echo $adminUser['id']; ?>" class="delete">delete</a></td>    
+                        </tr>
+                    <?php endforeach; ?> 
+
                 </table>
             </div>
             

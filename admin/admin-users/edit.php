@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,42 +73,49 @@
 
         <h2 class="page-title">Edit Admin User</h2>
 
-        <form action="create.php" method="post">
+        <!-- error messages -->
+        <?php
+            include("C:xampp/htdocs/Rental-Management-System/includes/formErrors.php");
+        ?>
+
+        <form action="edit.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $user_id; ?>">
+
             <div class="form-control">
                 <label>First Name</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="user_fname" value="<?php echo $user_fname; ?>">
             </div>
             <div class="form-control">
                 <label>Last Name</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="user_lname" value="<?php echo $user_lname; ?>">
             </div>
             <div class="form-control">
                 <label>Date of Birth</label>
-                <input type="date" name="title" class="text-input">
+                <input type="date" name="user_DOB" value="<?php echo $user_DOB; ?>">
             </div>
             <div class="form-control">
                 <label>Email Address</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="user_email" value="<?php echo $user_email; ?>">
             </div>
             <div class="form-control">
                 <label>Phone Number</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="user_phone_no" value="<?php echo $user_phone_no; ?>">
             </div>
             <div class="form-control">
                 <label>Occupation</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="user_occupation" value="<?php echo $user_occupation; ?>">
             </div>
             <div class="form-control">
                 <label>Password</label>
-                <input type="password" name="title" class="text-input">
+                <input type="password" name="user_password" value="<?php echo $user_password; ?>">
             </div>
             <div class="form-control">
                 <label>Confirm Password</label>
-                <input type="password" name="title" class="text-input">
+                <input type="password" name="user_passwordConf" value="<?php echo $user_passwordConf; ?>">
             </div>
             
             <div>
-                <button type="submit" class="btn submit-btn small-btn">Update User</button>
+                <button type="submit" name="update-admin-user" class="btn submit-btn small-btn">Update User</button>
             </div>
         </form>
         <!-- // Admin Content -->

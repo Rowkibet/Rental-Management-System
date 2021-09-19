@@ -83,35 +83,35 @@
 
             <div class="form-control">
                 <label>First Name</label>
-                <input type="text" name="tenant_fname" value="<?php echo $tenant_fname; ?>" class="text-input">
+                <input type="text" name="tenant_fname" value="<?php echo $tenant_fname; ?>">
             </div>
             <div class="form-control">
                 <label>Last Name</label>
-                <input type="text" name="tenant_lname" value="<?php echo $tenant_lname; ?>" class="text-input">
+                <input type="text" name="tenant_lname" value="<?php echo $tenant_lname; ?>">
             </div>
             <div class="form-control">
                 <label>Date of Birth</label>
-                <input type="date" name="tenant_DOB" value="<?php echo $tenant_DOB; ?>" class="text-input">
+                <input type="date" name="tenant_DOB" value="<?php echo $tenant_DOB; ?>">
             </div>
             <div class="form-control">
                 <label>Email Address</label>
-                <input type="text" name="tenant_email" value="<?php echo $tenant_email; ?>" class="text-input">
+                <input type="text" name="tenant_email" value="<?php echo $tenant_email; ?>">
             </div>
             <div class="form-control">
                 <label>Phone Number</label>
-                <input type="text" name="tenant_phone_no" value="<?php echo $tenant_phone_no; ?>" class="text-input">
+                <input type="text" name="tenant_phone_no" value="<?php echo $tenant_phone_no; ?>">
             </div>
             <div class="form-control">
                 <label>Occupation</label>
-                <input type="text" name="tenant_occupation" value="<?php echo $tenant_occupation; ?>" class="text-input">
+                <input type="text" name="tenant_occupation" value="<?php echo $tenant_occupation; ?>">
             </div>
             <div class="form-control">
                 <label>Password</label>
-                <input type="password" name="tenant_password" value="<?php echo $tenant_password; ?>" class="text-input">
+                <input type="password" name="tenant_password" value="<?php echo $tenant_password; ?>">
             </div>
             <div class="form-control">
                 <label>Confirm Password</label>
-                <input type="password" name="tenant_passwordConf" value="<?php echo $tenant_passwordConf; ?>" class="text-input">
+                <input type="password" name="tenant_passwordConf" value="<?php echo $tenant_passwordConf; ?>">
             </div>
             
             <div>

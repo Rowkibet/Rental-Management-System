@@ -111,12 +111,16 @@ if(isset($_POST['update-house'])) {
         $_POST['house_status'] = isset($_POST['house_status']) ? 1 : 0;
 
         $count = update($table, $id, $_POST);
-        if($count) {
+        if($count >= 1) {
             $_SESSION['message'] = 'House updated successfully';
             $_SESSION['type'] = 'success';
             header('location: http://localhost/Rental-Management-System/admin/houses/all-houses.php');
-        } else {
+        } elseif($count <= -1) {
             $_SESSION['message'] = 'Updating house failed';
+            $_SESSION['type'] = 'error';
+            header('location: http://localhost/Rental-Management-System/admin/houses/all-houses.php');
+        } else {
+            $_SESSION['message'] = 'No changes made';
             $_SESSION['type'] = 'error';
             header('location: http://localhost/Rental-Management-System/admin/houses/all-houses.php');
         }

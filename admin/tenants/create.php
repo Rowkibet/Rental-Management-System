@@ -1,3 +1,5 @@
+<?php include("C:xampp/htdocs/Rental-Management-System/app/controllers/users.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,42 +73,47 @@
 
         <h2 class="page-title">Add Tenant</h2>
 
+        <!-- error messages -->
+        <?php
+            include("C:xampp/htdocs/Rental-Management-System/includes/formErrors.php");
+        ?>
+
         <form action="create.php" method="post">
-            <div class="form-control">
+        <div class="form-control">
                 <label>First Name</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="tenant_fname" value="<?php echo $tenant_fname; ?>">
             </div>
             <div class="form-control">
                 <label>Last Name</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="tenant_lname" value="<?php echo $tenant_lname; ?>">
             </div>
             <div class="form-control">
                 <label>Date of Birth</label>
-                <input type="date" name="title" class="text-input">
+                <input type="date" name="tenant_DOB" value="<?php echo $tenant_DOB; ?>">
             </div>
             <div class="form-control">
                 <label>Email Address</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="tenant_email" value="<?php echo $tenant_email; ?>">
             </div>
             <div class="form-control">
                 <label>Phone Number</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="tenant_phone_no" value="<?php echo $tenant_phone_no; ?>">
             </div>
             <div class="form-control">
                 <label>Occupation</label>
-                <input type="text" name="title" class="text-input">
+                <input type="text" name="tenant_occupation" value="<?php echo $tenant_occupation; ?>">
             </div>
             <div class="form-control">
                 <label>Password</label>
-                <input type="password" name="title" class="text-input">
+                <input type="password" name="tenant_password" value="<?php echo $tenant_password; ?>">
             </div>
             <div class="form-control">
                 <label>Confirm Password</label>
-                <input type="password" name="title" class="text-input">
+                <input type="password" name="tenant_passwordConf" value="<?php echo $tenant_passwordConf; ?>">
             </div>
             
             <div>
-                <button type="submit" class="btn submit-btn small-btn">Add User</button>
+                <button type="submit" name="add-tenant" class="btn submit-btn small-btn">Add Tenant</button>
             </div>
         </form>
         <!-- // Admin Content -->
